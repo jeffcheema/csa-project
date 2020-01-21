@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <link rel="manifest" href="manifest.json">
+<script src="javascripts/sw.js"></script>
+  <title>SBB</title>
+</head>
+<body>
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer
+              mdl-layout--fixed-header">
+    <header class="mdl-layout__header">
+      <div class="mdl-layout__header-row">
+        <div class="mdl-layout-spacer"></div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable
+                    mdl-textfield--floating-label mdl-textfield--align-right">
+          <label class="mdl-button mdl-js-button mdl-button--icon"
+                 for="fixed-header-drawer-exp">
+            <i class="material-icons">search</i>
+          </label>
+          <div class="mdl-textfield__expandable-holder">
+            <input class="mdl-textfield__input" type="text" name="sample"
+                   id="fixed-header-drawer-exp">
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="mdl-layout__drawer">
+      <span class="mdl-layout-title">SBB</span>
+
+      <nav class="mdl-navigation">
+        <a class="mdl-navigation__link" href="">Link</a>
+        <a class="mdl-navigation__link" href="">Link</a>
+        <a class="mdl-navigation__link" href="">Link</a>
+        <a class="mdl-navigation__link" href="">Link</a>
+      </nav>
+    </div>
+    <main class="mdl-layout__content">
+      <div class="page-content">
+  <div class="page">
+    <div id="template">
+
+
+
+
+
+      <div class="track">
+     <div class="trackplay">
+         <div class="play">
+             <button class="bubbly-button" onclick="onPlayButtonClick({{index}})"style="background-image: url({{thumbnail}})">
+               <i class="fas fa-play"></i>
+             </button>
+         </div>
+         <div class="trackname">
+     <h5>{{title}}</h5>
+             <h6><a href="/#!/album/{{albumID}}" onclick="albumLink('{{albumID}}')">{{album}}</a></h6>
+         </div>
+     </div>
+     <div class="fav">
+         <div>
+           <i class="fas fa-ellipsis-v"></i>
+
+
+         </div>
+     </div>
+ </div>
+       </div>
+       </div>
+<div class="page">
+  <div id="jumbotron" class="card mobile">
+  </div>
+  <div class="wrapper">
+  <div id="albumInfo" class="fullwidth card">
+  <span id="title" class="fullwidth"></span>
+  <br>
+<span id="artist" class="fullwidth"></span>
+</div>
+
+
+</div>
+<div id="tracklist">
+  <div class="track">
+ <div class="trackplay">
+     <div class="play">
+       <button class="bubbly-button albumResultsSong" onclick="onPlayButtonClick({{index}})"><i class="fas fa-play"></i></button>
+
+     </div>
+     <div class="trackname">
+         <h5>{{title}}</h5>
+
+     </div>
+ </div>
+ <div class="fav">
+     <div>
+       <i class="fas fa-ellipsis-v"></i>
+
+
+     </div>
+ </div>
+</div>
+</div>
+  </div>
+
+    </main>
+  </div>
+  <section id="footer" class="card">
+    <div class="trackname">
+      <input class="mdl-slider mdl-js-slider" id="progressbar" type="range"
+    min="0" max="100" value="0" tabindex="0">
+<br>
+<div class="musicControl">
+  <div class="musicButton">
+<marquee>
+
+</marquee>
+
+  </div>
+  <div class="musicButton">
+    <button class="fullwidth mdl-button mdl-js-button mdl-js-ripple-effect" onclick="back()">
+
+      <i class="fas fa-step-backward"></i>
+
+
+    </button>
+
+  </div>
+  <div class="musicButton">
+    <button id="playpause" class="fullwidth mdl-button mdl-js-button mdl-js-ripple-effect" onclick="playpause()">
+      <i class="fas fa-play"></i>
+
+
+    </button>
+
+  </div>
+  <div class="musicButton">
+    <button class="fullwidth mdl-button mdl-js-button mdl-js-ripple-effect" onclick="forward()">
+      <i class="fas fa-step-forward"></i>
+
+
+    </button>
+
+  </div>
+  <div class="musicButton">
+    <button class="fullwidth mdl-button mdl-js-button mdl-js-ripple-effect" onclick="more()"><i class="fas fa-ellipsis-v"></i></button>
+  </div>
+</div>
+    </div>
+  </section>
+  <audio style="display:none;"></audio>
+  <link rel="import" href="imports.html"/>
+</body>
+</html>
